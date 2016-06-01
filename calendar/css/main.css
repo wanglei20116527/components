@@ -1,7 +1,9 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none; }
 
 html,
 body {
@@ -10,12 +12,6 @@ body {
 
 li {
   list-style: none; }
-
-div::-webkit-selection {
-  background: transparent; }
-
-div::selection {
-  background: transparent; }
 
 .hide {
   display: none; }
@@ -62,14 +58,16 @@ div::selection {
       top: 0;
       left: 0;
       width: 100%;
-      padding: 0 10px; }
-      .wl.calendar .body .month-pane.middle {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0); }
-      .wl.calendar .body .month-pane.left {
+      padding: 0 10px;
+      -webkit-transition: -webkit-transform 0s ease-in-out;
+      transition: transform 0s ease-in-out; }
+      .wl.calendar .body .month-pane:first-child {
         -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0); }
-      .wl.calendar .body .month-pane.right {
+      .wl.calendar .body .month-pane:nth-child(2) {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0); }
+      .wl.calendar .body .month-pane:nth-child(3) {
         -webkit-transform: translate3d(100%, 0, 0);
         transform: translate3d(100%, 0, 0); }
       .wl.calendar .body .month-pane .wrap {
@@ -100,7 +98,7 @@ div::selection {
               .wl.calendar .body .month-pane .wrap .row .col .date-cell .date {
                 display: block;
                 font-size: 16px; }
-              .wl.calendar .body .month-pane .wrap .row .col .date-cell .lunar-date {
+              .wl.calendar .body .month-pane .wrap .row .col .date-cell .label {
                 display: block;
                 position: relative;
                 top: -2px;
@@ -124,7 +122,7 @@ div::selection {
               border-radius: 50%;
               border: 1px solid rgba(0, 169, 149, 0.3);
               background: rgba(0, 169, 149, 0.1); }
-            .wl.calendar .body .month-pane .wrap .row .col.selected .lunar-date {
+            .wl.calendar .body .month-pane .wrap .row .col.selected .label {
               display: none; }
             .wl.calendar .body .month-pane .wrap .row .col.selected.today .date-cell {
               background: #00a995; }

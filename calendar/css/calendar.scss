@@ -42,22 +42,23 @@ $num: 7;
 			left: 0;
 			width: 100%;
 			padding: 0 10px;
-			
-			&.middle {
-				-webkit-transform: translate3d(0, 0, 0);
-				        transform: translate3d(0, 0, 0);
-				
-			}
 
-			&.left {
+			-webkit-transition: -webkit-transform 0s ease-in-out;
+					transition: transform 0s ease-in-out;
+
+			&:first-child {
 				-webkit-transform: translate3d(-100%, 0, 0);
 				        transform: translate3d(-100%, 0, 0);
 			}
 
-			&.right {
+			&:nth-child(2) {
+				-webkit-transform: translate3d(0, 0, 0);
+				        transform: translate3d(0, 0, 0);
+			}
+
+			&:nth-child(3) {
 				-webkit-transform: translate3d(100%, 0, 0);
 				        transform: translate3d(100%, 0, 0);
-				
 			}
 
 			.wrap {
@@ -94,7 +95,7 @@ $num: 7;
 								font-size: 16px;
 							}
 
-							.lunar-date {
+							.label {
 								display: block;
 								position: relative;
 								top: -2px;
@@ -139,7 +140,7 @@ $num: 7;
 								background: rgba(0, 169, 149, .1);
 							}
 
-							.lunar-date {
+							.label {
 								display: none;
 							}
 						}
